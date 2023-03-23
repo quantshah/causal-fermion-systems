@@ -45,7 +45,7 @@ def lagrangian(x, y):
         y (array[complex]): Hermitian matrix 2
     """
     eigvals = jnp.linalg.eigvals(x @ y)
-    return (1 / 4 * n) * jnp.sum(vectorized_diff(eigvals, eigvals) ** 2)
+    return (1 / 4) * jnp.sum(vectorized_diff(eigvals, eigvals) ** 2)/n
 
 
 def cprod(c1, c2):
